@@ -556,3 +556,11 @@ section {
         width: 200px;
     }
 }
+
+.member-image img {
+    transition: transform 0.5s ease;
+}
+
+.team-card:hover .member-image img {
+    transform: rotate(5deg) scale(1.05);
+}
