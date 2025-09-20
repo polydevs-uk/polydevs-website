@@ -1,0 +1,10 @@
+{
+  "name": "Polydevs - AI Development Team",
+  "short_name": "Polydevs",
+  "description": "AI Development & Innovation Team",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a14",
+  "theme_color": "#6a9bd1",
+  "orientation": "portrait-primary"
+}
