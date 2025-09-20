@@ -1,11 +1,8 @@
 {
   "name": "polydevs",
   "version": "1.0.0",
+  "description": "Polydevs - AI Development Team Website",
   "scripts": {
-    "copy-fa": "node scripts/copy-fontawesome.js",
-    "build": "npm run copy-fa"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.4.0"
+    "start": "echo 'Static site - no build needed'"
   }
 }
