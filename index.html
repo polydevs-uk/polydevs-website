@@ -3,21 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polydevs</title>
+    <title>Polydevs - AI Development Team</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="bg"></div>
 
-<!-- Logo/Title -->
-<div class="container">
-    <h1 class="title">Polydevs</h1>
-</div>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1 class="title">Polydevs</h1>
+        <p class="subtitle">AI & Machine Learning Development Team</p>
+        <a href="#about" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </div>
+</section>
+
+<!-- About Team Section -->
+<section id="about" class="about-section">
+    <div class="content-wrapper">
+        <h2 class="section-title">About Our Team</h2>
+        <p class="section-description">
+            We are a passionate group of developers and researchers focused on pushing the boundaries
+            of AI and machine learning. Our team specializes in developing cutting-edge language models,
+            chatbots, and AI-powered solutions.
+        </p>
+
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>2+</h3>
+                <p>AI Projects</p>
+            </div>
+            <div class="stat-item">
+                <h3>4</h3>
+                <p>Team Members</p>
+            </div>
+            <div class="stat-item">
+                <h3>1</h3>
+                <p>Open Source Models</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Members Section -->
+<section id="team" class="team-section">
+    <div class="content-wrapper">
+        <h2 class="section-title">Meet Our Team</h2>
+
+        <div class="team-grid">
+            <!-- Team Member 1 -->
+            <div class="team-card">
+                <div class="member-image">
+                    <img src="https://avatars.githubusercontent.com/u/190599945?v=4" alt="Team Lead">
+                </div>
+                <h3>Zang Vũ</h3>
+                <p class="role">Team Lead & AI Architect</p>
+                <p class="bio">
+                    Specializes in transformer architectures and large language models.
+                    5+ years experience in deep learning.
+                </p>
+                <div class="skills">
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">Transformers</span>
+                    <span class="skill-tag">NLP</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-card">
+                <div class="member-image">
+                    <img src="https://avatars.githubusercontent.com/u/159256864?s=64&v=4" alt="ML Engineer">
+                </div>
+                <h3>Lê Công Vinh</h3>
+                <p class="role">Machine Learning Engineer</p>
+                <p class="bio">
+                    Expert in model optimization and deployment. Passionate about making
+                    AI accessible and efficient.
+                </p>
+                <div class="skills">
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">MLOps</span>
+                    <span class="skill-tag">Python</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-card">
+                <div class="member-image">
+                    <img src="https://avatars.githubusercontent.com/u/115215544?v=4" alt="Research Scientist">
+                </div>
+                <h3>Đinh Hoàng Nguyên</h3>
+                <p class="role">Research Scientist</p>
+                <p class="bio">
+                    Focuses on conversational AI and dialogue systems. Published researcher
+                    in major AI conferences.
+                </p>
+                <div class="skills">
+                    <span class="skill-tag">Research</span>
+                    <span class="skill-tag">Chatbots</span>
+                    <span class="skill-tag">BERT</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="js/script.js"></script>
 </body>
 </html>
