@@ -393,18 +393,20 @@ section {
     line-height: 1.6;
 }
 
-/* Contact Section */
+/* Contact Section - Updated for perfect alignment */
 .contact-description {
     text-align: center;
     opacity: 0.9;
     max-width: 600px;
     margin: -1rem auto 2rem;
+    line-height: 1.6;
 }
 
 .contact-grid {
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    align-items: flex-start;
+    gap: 4rem;
     margin-top: 3rem;
     flex-wrap: wrap;
 }
@@ -413,27 +415,49 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    justify-content: flex-start;
+    gap: 1.2rem;
     text-decoration: none;
     color: var(--text-light);
     transition: all 0.3s ease;
-}
-
-.contact-item i {
-    font-size: 3rem;
-    color: var(--accent-blue);
-}
-
-.contact-item span {
-    font-size: 1.1rem;
+    min-width: 120px;
+    padding: 1rem;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.03);
 }
 
 .contact-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.contact-item i {
+    font-size: 3.5rem;
+    color: var(--accent-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(106, 155, 209, 0.1);
+    transition: all 0.3s ease;
+    line-height: 1;
 }
 
 .contact-item:hover i {
     color: #87ceeb;
+    background: rgba(135, 206, 235, 0.2);
+    transform: scale(1.1);
+}
+
+.contact-item span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.2;
+    margin: 0;
 }
 
 /* Footer */
@@ -495,6 +519,20 @@ section {
         max-width: 400px;
         margin: 3rem auto 0;
     }
+
+    .contact-grid {
+        gap: 2rem;
+    }
+
+    .contact-item i {
+        font-size: 3rem;
+        width: 70px;
+        height: 70px;
+    }
+
+    .contact-item span {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -506,5 +544,15 @@ section {
     .content-wrapper {
         padding: 30px 20px;
         border-radius: 15px;
+    }
+
+    .contact-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .contact-item {
+        width: 200px;
     }
 }
