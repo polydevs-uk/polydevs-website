@@ -108,17 +108,38 @@ body {
     text-decoration: none;
 }
 
-/* Sections Base */
+/* Sections Base - CẬP NHẬT MỚI */
 section {
     position: relative;
     z-index: 1;
-    padding: 80px 0;
+    padding: 40px 20px;
 }
 
 .content-wrapper {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 60px 40px;
+
+    /* Tạo khung bo tròn với glassmorphism effect */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+            0 8px 32px 0 rgba(31, 38, 135, 0.37),
+            inset 0 0 20px rgba(255, 255, 255, 0.05);
+
+    /* Animation khi hover */
+    transition: all 0.3s ease;
+}
+
+.content-wrapper:hover {
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow:
+            0 8px 40px 0 rgba(31, 38, 135, 0.45),
+            inset 0 0 30px rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px);
 }
 
 .section-title {
@@ -138,12 +159,12 @@ section {
     width: 60px;
     height: 3px;
     background: var(--accent-blue);
+    border-radius: 2px;
 }
 
-/* About Section */
+/* About Section - ĐÃ CẬP NHẬT */
 .about-section {
-    background: var(--bg-dark);
-    backdrop-filter: blur(10px);
+    /* Bỏ background cũ vì đã có trong content-wrapper */
 }
 
 .section-description {
@@ -165,15 +186,20 @@ section {
 .stat-item {
     text-align: center;
     padding: 2rem;
-    background: var(--bg-card);
-    border-radius: 10px;
+
+    /* Khung con bo tròn */
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .stat-item:hover {
     transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 .stat-item h3 {
@@ -190,9 +216,9 @@ section {
     opacity: 0.8;
 }
 
-/* Team Section */
+/* Team Section - ĐÃ CẬP NHẬT */
 .team-section {
-    background: rgba(30, 30, 40, 0.95);
+    /* Bỏ background cũ */
 }
 
 .team-grid {
@@ -203,19 +229,22 @@ section {
 }
 
 .team-card {
-    background: var(--bg-card);
-    border-radius: 15px;
+    /* Card con với bo tròn */
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
     padding: 2rem;
     text-align: center;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .team-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     border-color: var(--accent-blue);
+    background: rgba(255, 255, 255, 0.12);
 }
 
 .member-image {
@@ -225,6 +254,7 @@ section {
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid var(--accent-blue);
+    box-shadow: 0 4px 15px rgba(106, 155, 209, 0.3);
 }
 
 .member-image img {
@@ -264,8 +294,14 @@ section {
     padding: 0.3rem 0.8rem;
     background: rgba(106, 155, 209, 0.2);
     border: 1px solid var(--accent-blue);
-    border-radius: 20px;
+    border-radius: 15px;
     font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background: rgba(106, 155, 209, 0.3);
+    transform: scale(1.05);
 }
 
 .social-links {
@@ -278,11 +314,19 @@ section {
     color: var(--text-light);
     font-size: 1.2rem;
     transition: all 0.3s ease;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .social-links a:hover {
     color: var(--accent-blue);
     transform: translateY(-3px);
+    background: rgba(106, 155, 209, 0.2);
 }
 
 /* Animations */
@@ -325,6 +369,11 @@ section {
         font-size: 2rem;
     }
 
+    .content-wrapper {
+        padding: 40px 25px;
+        border-radius: 20px;
+    }
+
     .team-grid {
         grid-template-columns: 1fr;
         max-width: 400px;
@@ -336,5 +385,10 @@ section {
     .title {
         font-size: 2.5rem;
         letter-spacing: 0.1em;
+    }
+
+    .content-wrapper {
+        padding: 30px 20px;
+        border-radius: 15px;
     }
 }
