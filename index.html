@@ -5,21 +5,298 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polydevs - AI Development Team</title>
 
-    <!-- Preload Critical CSS -->
-    <link rel="preload" href="css/critical.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/critical.css"></noscript>
-
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="css/fontawesome.min.css" id="fontawesome-css">
-    <link rel="stylesheet" href="css/style.css" id="main-css">
+    <!-- INLINE CRITICAL CSS - NO CACHE ISSUES -->
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- CSS Loader Script -->
-    <script src="js/css-loader.js"></script>
+        /* Variables */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #ffffff 0%, #f8f9fa 10%, #e6f2ff 20%, #b8d4e3 35%, #6a9bd1 55%, #4a7ba7 75%, #3d5a80 100%);
+            --text-light: #f8f9fa;
+            --accent-blue: #6a9bd1;
+        }
+
+        /* Base */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            color: var(--text-light);
+        }
+
+        /* Background */
+        .bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/background.jpg') center/cover no-repeat;
+            filter: blur(8px);
+            transform: scale(1.1);
+            z-index: -2;
+        }
+
+        .bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 20, 0.7);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 1;
+        }
+
+        .title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 6rem;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-top: 1rem;
+            opacity: 0.9;
+            letter-spacing: 0.05em;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--text-light);
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        /* Content Wrapper */
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37), inset 0 0 20px rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .content-wrapper:hover {
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 40px 0 rgba(31, 38, 135, 0.45), inset 0 0 30px rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent-blue);
+            border-radius: 2px;
+        }
+
+        section {
+            position: relative;
+            z-index: 1;
+            padding: 40px 20px;
+        }
+
+        /* Projects Grid */
+        .projects-grid,
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card,
+        .service-item {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card:hover,
+        .service-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Grid */
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 4rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1.2rem;
+            text-decoration: none;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            min-width: 120px;
+            padding: 1rem;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-item i {
+            font-size: 3.5rem;
+            color: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(106, 155, 209, 0.1);
+            transition: all 0.3s ease;
+            line-height: 1;
+        }
+
+        .contact-item:hover i {
+            color: #87ceeb;
+            background: rgba(135, 206, 235, 0.2);
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 4rem;
+            }
+            .content-wrapper {
+                padding: 40px 25px;
+                border-radius: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 3rem;
+                letter-spacing: 0.1em;
+            }
+            .content-wrapper {
+                padding: 30px 20px;
+                border-radius: 15px;
+            }
+            .contact-grid {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            .contact-item {
+                width: 200px;
+            }
+        }
+    </style>
+
+    <!-- Version controlled CSS with timestamp -->
+    <script>
+        // Generate unique version based on timestamp
+        const version = new Date().getTime();
+
+        // Create link elements with version
+        const cssFiles = [
+            { href: `css/fontawesome.min.css?v=${version}`, id: 'fontawesome-css' },
+            { href: `css/style.css?v=${version}`, id: 'main-css' }
+        ];
+
+        cssFiles.forEach(file => {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = file.href;
+            link.id = file.id;
+            document.head.appendChild(link);
+        });
+    </script>
+
+    <!-- Preconnect for performance -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 </head>
 <body>
 <div class="bg"></div>
@@ -256,15 +533,15 @@
         </p>
 
         <div class="contact-grid">
-            <a href="#" class="contact-item">
+            <a href="https://discord.polydevs.uk" class="contact-item">
                 <i class="fab fa-discord"></i>
                 <span>Join Discord</span>
             </a>
-            <a href="#" class="contact-item">
+            <a href="https://github.com/polydevs-uk" class="contact-item">
                 <i class="fab fa-github"></i>
                 <span>GitHub</span>
             </a>
-            <a href="#" class="contact-item">
+            <a href="mailto:contact@polydevs.uk" class="contact-item">
                 <i class="fas fa-envelope"></i>
                 <span>Email Us</span>
             </a>
@@ -279,6 +556,20 @@
     </div>
 </footer>
 
+<!-- Scripts load last -->
 <script src="js/script.js"></script>
+
+<!-- Force cache clear for Cloudflare -->
+<script>
+    // Force reload CSS if needed
+    if (window.location.search.includes('force-refresh')) {
+        location.reload(true);
+    }
+
+    // Add version to all resource requests
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Page loaded with version:', new Date().toISOString());
+    });
+</script>
 </body>
 </html>
