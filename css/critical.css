@@ -155,3 +155,17 @@
         width: 200px !important;
     }
 }
+
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 6rem;  /* Tăng từ 5rem lên 6rem */
+    font-weight: 300;
+    /* BỎ text-transform: uppercase; */
+    letter-spacing: 0.15em;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* BỎ text-shadow và animation glow */
+    margin-bottom: 1rem;
+}
