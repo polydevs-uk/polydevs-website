@@ -88,7 +88,7 @@ class CSSLoader {
         return false;
     }
 
-    // Initialize
+
     async init() {
         // Load critical CSS first - với higher priority
         try {
