@@ -90,13 +90,30 @@ class CSSLoader {
 
     // Initialize
     async init() {
-        // Load critical CSS first
+        // Load critical CSS first - với higher priority
         try {
             await this.loadCSS('css/critical.css', 'critical-css');
             console.log('✅ Critical CSS loaded');
+
+            // Force apply critical styles immediately
+            const criticalLink = document.getElementById('critical-css');
+            if (criticalLink) {
+                criticalLink.rel = 'stylesheet';
+                criticalLink.media = 'all';
+            }
         } catch (error) {
             console.warn('⚠️ Critical CSS failed to load:', error);
         }
+
+        // Load main CSS sau
+        setTimeout(async () => {
+            try {
+                await this.loadCSS('css/style.css', 'main-css-backup');
+                await this.loadCSS('css/fontawesome.min.css', 'fa-css-backup');
+            } catch (error) {
+                console.warn('⚠️ Main CSS backup load failed:', error);
+            }
+        }, 100);
 
         // Check and auto-fix on DOM ready
         if (document.readyState === 'loading') {

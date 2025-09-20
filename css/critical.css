@@ -155,17 +155,109 @@
         width: 200px !important;
     }
 }
+.hero {
+    height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+}
+
+.container {
+    text-align: center !important;
+    z-index: 1 !important;
+}
 
 .title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 6rem;  /* Tăng từ 5rem lên 6rem */
-    font-weight: 300;
-    /* BỎ text-transform: uppercase; */
-    letter-spacing: 0.15em;
-    background: var(--primary-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    /* BỎ text-shadow và animation glow */
-    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 6rem !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.15em !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 10%, #e6f2ff 20%, #b8d4e3 35%, #6a9bd1 55%, #4a7ba7 75%, #3d5a80 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    margin-bottom: 1rem !important;
+    text-transform: none !important;
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+.subtitle {
+    font-size: 1.2rem !important;
+    font-weight: 300 !important;
+    margin-top: 1rem !important;
+    opacity: 0.9 !important;
+    letter-spacing: 0.05em !important;
+    color: #f8f9fa !important;
+}
+
+.scroll-down {
+    position: absolute !important;
+    bottom: 30px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    color: #f8f9fa !important;
+    font-size: 1.5rem !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    animation: bounce 2s infinite !important;
+}
+
+/* Bounce animation for scroll down */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0) !important;
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px) !important;
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px) !important;
+    }
+}
+
+/* Responsive for Hero */
+@media (max-width: 768px) {
+    .title {
+        font-size: 4rem !important;
+    }
+
+    .subtitle {
+        font-size: 1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 3rem !important;
+        letter-spacing: 0.1em !important;
+    }
+
+    .subtitle {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Background - Force load */
+.bg {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: url('../images/background.jpg') center/cover no-repeat !important;
+    filter: blur(8px) !important;
+    transform: scale(1.1) !important;
+    z-index: -2 !important;
+}
+
+.bg::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(10, 10, 20, 0.7) !important;
 }
