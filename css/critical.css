@@ -261,3 +261,186 @@
     height: 100% !important;
     background: rgba(10, 10, 20, 0.7) !important;
 }
+
+
+/* Navigation Toolbar */
+.navbar {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    animation: slideDown 0.5s ease-out;
+    /* Thêm transition cho hiệu ứng smooth */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease;
+    opacity: 1;
+}
+
+/* Class để ẩn navbar */
+.navbar.hidden {
+    transform: translateX(-50%) translateY(-70px);
+    opacity: 0;
+}
+
+/* Class để hiện navbar */
+.navbar.visible {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.nav-container {
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    padding: 8px 16px;
+    display: flex;
+    gap: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    min-height: 44px;
+    align-items: center;
+    /* Thêm transition cho container */
+    transition: all 0.3s ease;
+}
+
+.nav-item {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.nav-item i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.nav-item span {
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.nav-item:hover i {
+    transform: scale(1.1);
+}
+
+.nav-item.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+}
+
+.nav-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-item:hover::before {
+    opacity: 1;
+}
+
+/* Animation ban đầu */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        top: 8px;
+        width: 95%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .navbar.hidden {
+        transform: translateX(-50%) translateY(-60px);
+    }
+
+    .nav-container {
+        padding: 6px 8px;
+        gap: 4px;
+        justify-content: space-between;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        min-height: 40px;
+    }
+
+    .nav-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-item {
+        padding: 8px 12px;
+        font-size: 12px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .nav-item i {
+        font-size: 14px;
+    }
+
+    .nav-item span {
+        display: none;
+    }
+
+    .nav-item:hover span {
+        display: inline;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 5px 6px;
+        min-height: 36px;
+    }
+
+    .nav-item {
+        padding: 6px 10px;
+    }
+
+    .navbar.hidden {
+        transform: translateX(-50%) translateY(-50px);
+    }
+}
+
+/* Adjust hero section padding to account for navbar */
+.hero {
+    padding-top: 90px;
+}
