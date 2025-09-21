@@ -186,3 +186,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Đảm bảo navbar hiện ngay từ đầu
     navbar.classList.add('visible');
 });
+
+// Force reload favicon
+document.addEventListener('DOMContentLoaded', function() {
+    const favicon = document.querySelector('link[rel="icon"]');
+    const timestamp = new Date().getTime();
+
+    if (favicon) {
+        favicon.href = './icon.png?v=' + timestamp;
+    } else {
+        // Tạo favicon mới nếu không tồn tại
+        const newFavicon = document.createElement('link');
+        newFavicon.rel = 'icon';
+        newFavicon.type = 'image/png';
+        newFavicon.href = './icon.png?v=' + timestamp;
+        document.head.appendChild(newFavicon);
+    }
+});

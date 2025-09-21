@@ -1,45 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Basic Meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polydevs - AI Development Team</title>
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Polydevs - Specialized AI/ML development team focused on building intelligent chatbots, AI models, and modern web applications with cutting-edge technology.">
-    <meta name="keywords" content="AI, ML, chatbot, development, polydevs, artificial intelligence, machine learning">
+    <meta name="keywords" content="AI, ML, chatbot, development, polydevs, artificial intelligence, machine learning, deep learning, python, algorithms">
     <meta name="author" content="Polydevs Team">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
 
-    <!-- Open Graph Meta Tags (Facebook, LinkedIn) -->
+    <!-- Favicon - Multiple formats & cache busting -->
+    <link rel="icon" type="image/png" href="./icon.png?v=1.0.4">
+    <link rel="icon" type="image/x-icon" href="./icon.png?v=1.0.4">
+    <link rel="shortcut icon" type="image/png" href="./icon.png?v=1.0.4">
+    <link rel="apple-touch-icon" href="./icon.png?v=1.0.4">
+    <link rel="apple-touch-icon" sizes="180x180" href="./icon.png?v=1.0.4">
+    <link rel="icon" type="image/png" sizes="32x32" href="./icon.png?v=1.0.4">
+    <link rel="icon" type="image/png" sizes="16x16" href="./icon.png?v=1.0.4">
+
+    <!-- Open Graph Meta Tags (Facebook, LinkedIn, Discord) -->
     <meta property="og:title" content="Polydevs - AI Development Team">
-    <meta property="og:description" content="Specialized AI/ML development team focused on building intelligent chatbots, AI models, and modern web applications.">
-    <meta property="og:image" content="https://yourdomain.com/images/polydevs-banner.jpg">
+    <meta property="og:description" content="Specialized AI/ML development team focused on building intelligent chatbots, AI models, and modern web applications with cutting-edge technology.">
+    <meta property="og:image" content="https://polydevs.uk/images/polydevs-banner.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:image:alt" content="Polydevs - AI Development Team Banner">
+    <meta property="og:url" content="https://polydevs.uk">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Polydevs">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Polydevs - AI Development Team">
     <meta name="twitter:description" content="Specialized AI/ML development team focused on building intelligent chatbots, AI models, and modern web applications.">
-    <meta name="twitter:image" content="https://yourdomain.com/images/polydevs-banner.jpg">
+    <meta name="twitter:image" content="https://polydevs.uk/images/polydevs-banner.png">
+    <meta name="twitter:image:alt" content="Polydevs - AI Development Team">
+    <meta name="twitter:site" content="@polydevs">
+    <meta name="twitter:creator" content="@polydevs">
 
-    <!-- Discord/Telegram specific -->
+    <!-- Discord/Telegram/App specific -->
     <meta name="theme-color" content="#667eea">
+    <meta name="msapplication-TileColor" content="#667eea">
+    <meta name="msapplication-TileImage" content="./icon.png">
 
-    <!-- Google Fonts -->
+    <!-- Performance & Cache Control -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- CSS Files với cache busting -->
-    <link rel="stylesheet" href="css/fontawesome.min.css?v=1.0.2" id="fontawesome-css">
-    <link rel="stylesheet" href="css/style.css?v=1.0.2" id="main-css">
+    <!-- Preload Critical CSS -->
+    <link rel="preload" href="css/style.css?v=1.0.4" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/style.css?v=1.0.4"></noscript>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/fontawesome.min.css?v=1.0.4" id="fontawesome-css">
+    <link rel="stylesheet" href="css/style.css?v=1.0.4" id="main-css">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Polydevs",
+            "description": "Specialized AI/ML development team focused on building intelligent chatbots, AI models, and modern web applications.",
+            "url": "https://polydevs.uk",
+            "logo": "https://polydevs.uk/icon.png",
+            "foundingDate": "2024",
+            "founders": [
+                {
+                    "@type": "Person",
+                    "name": "Zang Vũ",
+                    "jobTitle": "Team Leader & AI/ML Engineer"
+                }
+            ],
+            "sameAs": [
+                "https://github.com/polydevs-uk",
+                "https://discord.polydevs.uk"
+            ],
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "Customer Service",
+                "url": "https://discord.polydevs.uk"
+            }
+        }
+    </script>
 
     <!-- CSS Loader Script -->
-    <script src="js/css-loader.js?v=1.0.2"></script>
+    <script src="js/css-loader.js?v=1.0.4"></script>
+
+    <!-- Analytics (Optional - thêm nếu cần) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
+    <!-- <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script> -->
 </head>
 
 <body>
