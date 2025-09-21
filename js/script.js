@@ -97,3 +97,92 @@ if (document.readyState === 'loading') {
 } else {
     preloadResources();
 }
+
+// Navbar functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scroll for nav links (giữ nguyên)
+    const navLinks = document.querySelectorAll('.nav-item');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            const targetSection = targetId === '#hero' ? document.querySelector('.hero') : document.querySelector(targetId);
+
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 100;
+
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Update active state
+            navLinks.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    // Update active state on scroll (giữ nguyên)
+    window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section');
+        const scrollPosition = window.scrollY + 150;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id') || 'hero';
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+
+                    const href = link.getAttribute('href');
+                    if ((href === '#hero' && section.classList.contains('hero')) ||
+                        href === `#${sectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    });
+
+    // Smooth Hide/Show navbar on scroll - PHIÊN BẢN MỚI
+    let lastScrollTop = 0;
+    let scrollTimeout;
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Clear timeout cũ
+        clearTimeout(scrollTimeout);
+
+        // Thêm delay nhỏ để tránh quá nhiều trigger
+        scrollTimeout = setTimeout(() => {
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Scrolling down - ẩn navbar
+                navbar.classList.add('hidden');
+                navbar.classList.remove('visible');
+            } else if (scrollTop < lastScrollTop) {
+                // Scrolling up - hiện navbar
+                navbar.classList.remove('hidden');
+                navbar.classList.add('visible');
+            }
+
+            // Luôn hiện navbar khi ở top
+            if (scrollTop <= 50) {
+                navbar.classList.remove('hidden');
+                navbar.classList.add('visible');
+            }
+
+            lastScrollTop = scrollTop;
+        }, 10); // Delay 10ms để smooth hơn
+
+    }, false);
+
+    // Đảm bảo navbar hiện ngay từ đầu
+    navbar.classList.add('visible');
+});
